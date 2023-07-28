@@ -1,2 +1,4 @@
-package ke.co.safaricom.model;public class Sighting {
+package ke.co.safaricom.model;
+
+public class Sighting {
 }

@@ -1,2 +1,4 @@
-package ke.co.safaricom.config;public class DatabaseConfig {
+package ke.co.safaricom.config;
+
+public class DatabaseConfig {
 }

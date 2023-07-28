@@ -1,2 +1,4 @@
-package ke.co.safaricom.Dao;public class sightingDao {
+package ke.co.safaricom.Dao;
+
+public class sightingDao {
 }

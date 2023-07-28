@@ -1,2 +1,4 @@
-package ke.co.safaricom.Dao;public class rangerDao {
+package ke.co.safaricom.Dao;
+
+public class rangerDao {
 }
