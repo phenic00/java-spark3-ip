@@ -1,19 +1,91 @@
 package ke.co.safaricom;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+
+import ke.co.safaricom.Dao.animalDao;
+import ke.co.safaricom.Dao.rangerDao;
+import ke.co.safaricom.model.Animal;
+import ke.co.safaricom.model.Ranger;
+import ke.co.safaricom.model.Sighting;
+import spark.ModelAndView;
+import spark.template.handlebars.HandlebarsTemplateEngine;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static spark.Spark.*;
+import static spark.Spark.post;
+
 public class Main {
+    private static animalDao sightingDao;
+
     public static void main(String[] args) {
-        // Press Opt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf( "Hello and welcome!" );
+        port(8085);
+        staticFiles.location("/public");
+        staticFiles.expireTime(600L);
+        staticFiles.registerMimeType("html", "text/html");
+        staticFiles.registerMimeType("hbs", "text/html");
+        staticFiles.externalLocation("src/main/resources");
 
-        // Press Ctrl+R or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        get("/ranger/add",(request, response) ->{
+            return new ModelAndView( new HashMap<>(), "ranger.hbs");
+        },new HandlebarsTemplateEngine());
 
-            // Press Ctrl+D to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Cmd+F8.
-            System.out.println( "i = " + i );
-        }
+
+        post("/create-ranger",(request, response) -> {
+            String name = request.queryParams("ranger");
+            Ranger ranger =new Ranger();
+
+            ranger.setName( name );
+            rangerDao.create( ranger);
+            System.out.println(name );
+            String alertScript = "<script>alert('successful added ranger "+name+"');</script>";
+            return alertScript;
+        });
+
+        get("/animal/add",(request, response) ->{
+            Map<String, Object> model = new HashMap<>();
+           // model.put("options", animalDao.());
+            return new ModelAndView(model, "animal.hbs");
+        },new HandlebarsTemplateEngine());
+
+
+        post("/create-animal",(request, response) -> {
+            String name = request.queryParams("animal");
+            String health = request.queryParams("health");
+            String age = request.queryParams("age");
+            Animal animal =new Animal();
+
+            animal.setName( name );
+            animalDao.create(animal);
+            System.out.println(name + " " +age +health);
+            String alertScript = "<script>alert('successful added animal "+name+"' );</script>";
+            return alertScript;
+        });
+        get("/sighting/add",(request, response) ->{
+            Map<String, Object> model = new HashMap<>();
+           // model.put("options", sightingDao.getSightingOption());
+            return new ModelAndView(model, "sighting.hbs");
+        },new HandlebarsTemplateEngine());
+
+
+        post("/create-sighting",(request, response) -> {
+            String location = request.queryParams("location");
+            String health = request.queryParams("health");
+            String animalId = request.queryParams("animalId");
+            String rangerId = request.queryParams("rangerId");
+            Sighting sighting =new Sighting();
+            sighting.setLocation( location );
+            sighting.setHealth( location );
+            sighting.setAnimal_id( Integer.parseInt( animalId ) );
+            sighting.setRanger_id( Integer.parseInt( rangerId) );
+
+           // sightingDao.create(sighting );
+            System.out.println(location + " " +health);
+            String alertScript = "<script>alert('successful added hero "+sighting+"' );</script>";
+            return alertScript;
+        });
+
+
     }
+
 }

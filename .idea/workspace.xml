@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a9f7be71-d0e1-4a44-a2e5-de6b43d830cc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/configuration/Age.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/configuration/Health.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/dto/Option.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Dao/animalDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Dao/animalDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Dao/rangerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Dao/rangerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Dao/sightingDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Dao/sightingDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/config/Constant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/config/DatabaseConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/config/DatabaseConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/model/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/model/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/model/Ranger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/model/Ranger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/model/Sighting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/model/Sighting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/animal.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/animal.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ranger.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ranger.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sighting.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/sighting.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,8 +57,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="HTML File" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -74,6 +89,11 @@
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ke.co.safaricom.config" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -90,8 +110,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ke/co/safaricom/Main.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="1" />
+          <line>81</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
