@@ -13,11 +13,12 @@ public class animalDao {
     private static final Sql2o sql2o = DatabaseConfig.getDatabase();
     public static void create(Animal animal){
         try(Connection connection = sql2o.open()){
-            String query = "INSERT INTO animals (name, health,age) VALUES (:name, :health, :age);";
+            String query = "INSERT INTO animals (name, health,age,endangered) VALUES (:name, :health, :age,:endangered);";
             connection.createQuery(query)
                     .addParameter("name", animal.getName())
                     .addParameter("health", animal.getHealth())
                     .addParameter("age", animal.getAge())
+                    .addParameter("endangered", animal.isEndangered())
                     .executeUpdate();
         } catch (Exception exception){
             System.out.println(exception.getMessage());
@@ -40,9 +41,9 @@ public class animalDao {
         }
 
     }
-    public static List<Option> getSquadOption() {
+    public static List<Option> getAnimalOption() {
         try (Connection connection = sql2o.open()) {
-            String query = "SELECT id,name as text animals";
+            String query = "SELECT id,name as text from animals";
             List<Option> listOption = connection.createQuery( query )
                     .executeAndFetch( Option.class );
             System.out.println( listOption );

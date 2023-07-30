@@ -3,8 +3,12 @@ package ke.co.safaricom;
 
 import ke.co.safaricom.Dao.animalDao;
 import ke.co.safaricom.Dao.rangerDao;
+import ke.co.safaricom.Dao.sightingDao;
+import ke.co.safaricom.configuration.Age;
+import ke.co.safaricom.configuration.Health;
 import ke.co.safaricom.model.Animal;
 import ke.co.safaricom.model.Ranger;
+import ke.co.safaricom.model.Sighting;
 import ke.co.safaricom.model.Sighting;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
@@ -16,7 +20,7 @@ import static spark.Spark.*;
 import static spark.Spark.post;
 
 public class Main {
-    private static animalDao sightingDao;
+    private static sightingDao sightingDao;
 
     public static void main(String[] args) {
         port(8085);
@@ -53,9 +57,12 @@ public class Main {
             String name = request.queryParams("animal");
             String health = request.queryParams("health");
             String age = request.queryParams("age");
+            String endangered = request.queryParams("endangered");
             Animal animal =new Animal();
-
+            animal.setAge( Age.valueOf( age ) );
+            animal.setHealth( Health.valueOf( health ) );
             animal.setName( name );
+            animal.setEndangered( endangered.equalsIgnoreCase( "yes" ));
             animalDao.create(animal);
             System.out.println(name + " " +age +health);
             String alertScript = "<script>alert('successful added animal "+name+"' );</script>";
@@ -63,7 +70,8 @@ public class Main {
         });
         get("/sighting/add",(request, response) ->{
             Map<String, Object> model = new HashMap<>();
-           // model.put("options", sightingDao.getSightingOption());
+            model.put("rangers", rangerDao.getRangerOption());
+            model.put("animals", animalDao.getAnimalOption());
             return new ModelAndView(model, "sighting.hbs");
         },new HandlebarsTemplateEngine());
 
@@ -75,13 +83,14 @@ public class Main {
             String rangerId = request.queryParams("rangerId");
             Sighting sighting =new Sighting();
             sighting.setLocation( location );
-            sighting.setHealth( location );
+            sighting.setHealth( health );
             sighting.setAnimal_id( Integer.parseInt( animalId ) );
             sighting.setRanger_id( Integer.parseInt( rangerId) );
 
-           // sightingDao.create(sighting );
+            sightingDao.create(sighting);
+
             System.out.println(location + " " +health);
-            String alertScript = "<script>alert('successful added hero "+sighting+"' );</script>";
+            String alertScript = "<script>alert('successful added sighting "+sighting+"' );</script>";
             return alertScript;
         });
 

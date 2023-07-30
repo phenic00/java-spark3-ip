@@ -11,7 +11,8 @@ public class sightingDao {
 
     public static void create(Sighting sighting) {
         try (Connection connection = sql2o.open()) {
-            String query = "INSERT INTO sightings (name VALUES (:name);";
+            String query = "INSERT INTO sightings (location,health,animal_id,ranger_id)VALUES (:location,:health,:animal_id,:ranger_id);";
+
             connection.createQuery( query )
                     .addParameter( "location", sighting.getLocation() )
                     .addParameter( "health", sighting.getHealth() )

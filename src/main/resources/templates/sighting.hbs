@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet"  href="/css/style.css" />
     <title>Animals</title>
 </head>
 <body>
@@ -10,16 +11,14 @@
 
     <label>Name</label><br/>
     <input type="text" id="name" name="animal"><br/><br/>
-
-    <label> Select Age</label><br/>
     <select name="animalId">
-        {{#each options}}
+        {{#each animals}}
             <option value="{{this.id}}">{{this.text}}</option>
         {{/each}}
     </select>
     <label> Select Health</label><br/>
     <select name="rangerId">
-        {{#each options}}
+        {{#each rangers}}
             <option value="{{this.id}}">{{this.text}}</option>
         {{/each}}
     </select>
