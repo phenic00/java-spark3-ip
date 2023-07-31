@@ -9,24 +9,26 @@
 <h1>Animals</h1>
 <form action="/create-sighting" method="post">
 
-    <label>Name</label><br/>
-    <input type="text" id="name" name="animal"><br/><br/>
-    <select name="animalId">
+    <label>Select Animal </label><br/>
+    <select name="animalId"><br/><br/>
         {{#each animals}}
             <option value="{{this.id}}">{{this.text}}</option>
         {{/each}}
-    </select>
-    <label> Select Health</label><br/>
-    <select name="rangerId">
+    </select></br></br>
+    <label> Select Ranger</label><br/>
+    <select name="rangerId"><br/><br/>
         {{#each rangers}}
             <option value="{{this.id}}">{{this.text}}</option>
         {{/each}}
-    </select>
-    <select id="health" name="health">
+    </select><br/><br/>
+    <label>Select Health</label><br/>
+    <select id="health" name="health"><br/>
         <option value="healthy">healthy</option>
         <option value="ill">ill</option>
         <option value="okay">okay</option>
-    </select>
+        <label>Select location</label><br/>
+    </select><br/><br/>
+    <label> Select location</label><br/>
     <select id="location" name="location">
         <option value="Zone A">Zone A</option>
         <option value="Near the River">Near the River</option>
