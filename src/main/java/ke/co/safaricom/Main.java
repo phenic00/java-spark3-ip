@@ -13,6 +13,7 @@ import ke.co.safaricom.model.Sighting;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -84,6 +85,7 @@ public class Main {
             Sighting sighting =new Sighting();
             sighting.setLocation( location );
             sighting.setHealth( health );
+            sighting.setTimestamp( LocalDateTime.now() );
             sighting.setAnimal_id( Integer.parseInt( animalId ) );
             sighting.setRanger_id( Integer.parseInt( rangerId) );
 

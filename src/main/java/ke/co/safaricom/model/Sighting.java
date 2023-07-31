@@ -1,11 +1,23 @@
 package ke.co.safaricom.model;
 
+import java.time.LocalDateTime;
+
 public class Sighting {
     private int id;
     private int animal_id;
     private int ranger_id;
     private String location;
     private String health;
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    private LocalDateTime timestamp;
 
     public Sighting() {
     }

@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a9f7be71-d0e1-4a44-a2e5-de6b43d830cc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Dao/sightingDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Dao/sightingDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/model/Sighting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ke/co/safaricom/model/Sighting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sighting.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/sighting.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
